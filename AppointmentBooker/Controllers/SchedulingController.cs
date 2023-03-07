@@ -1,25 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
-using Google.Apis.Calendar.v3;
-using Services;
-using Google.Apis.Services;
+using Services.Models;
+using AppointmentBooker.Interfaces;
 
 namespace AppointmentBooker.Controllers
 {
+    /// <summary>
+    /// sccheduling Controller constructor partial and the main entrypoints to this class
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
-    public class SchedulingController : ControllerBase
+    public partial class SchedulingController : ControllerBase
     {
-
-        [HttpGet (Name = "GetSchedule")]
-        public Schedule GetSchedule()
+        // injected services for the controller
+        private readonly ICalendarService _calendarService;
+        // constructors
+        public SchedulingController(Services.CalendarService calendarService) 
         {
-            Schedule schedule = new Schedule();
-            //IClientService
-            //CalendarListResource.GetRequest request = new();
-
-
-            return schedule;
+            _calendarService = calendarService;
         }
-
     }
 }
