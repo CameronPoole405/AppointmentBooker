@@ -29,5 +29,8 @@ namespace AppointmentBooker.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet(Name = "GetSchedule")]
+        public 
     }
 }
