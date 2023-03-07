@@ -13,7 +13,7 @@ namespace AppointmentBooker.Services.Models
 
         // Success is determined by weather there are no errors or not 
         public bool Success { 
-            get { return !(Errors.Count > 0) && this._Success; } 
+            get { return !(this.Errors.Count > 0) && this._Success; } 
             set { this._Success = value; } 
         }
 
