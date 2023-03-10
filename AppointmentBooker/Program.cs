@@ -1,3 +1,5 @@
+using AppointmentBooker.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// inject the service layer with the service layer Activate Extension Method
+builder.Services.Activate();
 
 var app = builder.Build();
 
